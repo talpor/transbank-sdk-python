@@ -4,10 +4,10 @@ from transbank.common.model import CardDetail
 
 
 class TransactionStatusResponse(object):
-    def __init__(self, vci: str, amount: float, status: str, buy_order: str, session_id: str, card_detail: dict,
+    def __init__(self, amount: float, status: str, buy_order: str, session_id: str, card_detail: dict,
                  accounting_date: str, transaction_date: str, authorization_code: str, payment_type_code: str,
                  response_code: int, installments_number: int, installments_amount: float = None,
-                 balance: float = None):
+                 balance: float = None, vci: str = ""):
         self.vci = vci
         self.amount = amount
         self.status = status
@@ -34,9 +34,9 @@ class TransactionStatusResponse(object):
 
 
 class TransactionCommitResponse(object):
-    def __init__(self, vci: str, amount: float, status: str, buy_order: str, session_id: str, card_detail: dict,
+    def __init__(self, amount: float, status: str, buy_order: str, session_id: str, card_detail: dict,
                  accounting_date: str, transaction_date: str, authorization_code: str, payment_type_code: str,
-                 response_code: int, installments_number: int):
+                 response_code: int, installments_number: int, vci: str = ""):
         self.vci = vci
         self.amount = amount
         self.status = status
